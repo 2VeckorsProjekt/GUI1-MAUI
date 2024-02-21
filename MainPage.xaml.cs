@@ -14,31 +14,17 @@ namespace GUI1
 
         private async void OnConnectClicked(object sender, EventArgs e)
         {
-            string ip = "localhost";
-            string port = "5001";
-            string endpoint = "chathub";
-            string username = "Marcus";
-            string password = "456";
-
-            /*string ip = IpEntry.Text;
+            string ip = IpEntry.Text;
             string port = PortEntry.Text;
             string endpoint = EndpointEntry.Text;
             string username = UsernameEntry.Text;
-            string password = PasswordEntry.Text;            
-*/
+            string password = PasswordEntry.Text;
+
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 // Optionally, indicate to the user that they're being logged in as a guest
                 // or leave blank and let the server handle it as shown in the Hub modification.
                 username = "Guest";
-
-
-            }
-            else
-            {
-                // Save credentials securely
-                await SecureStorage.SetAsync("username", username);
-                await SecureStorage.SetAsync("password", password);
             }
 
             string url = $"wss://{ip}:{port}/{endpoint}";
@@ -47,6 +33,10 @@ namespace GUI1
             try
             {
                 await connection.StartAsync();
+
+                // Enter the username and password after starting the connection
+                await connection.InvokeAsync("Login", username, password);
+
 
                 // Navigate to chat page
                 await Navigation.PushAsync(new ChatPage(connection));

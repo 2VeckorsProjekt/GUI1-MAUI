@@ -1,0 +1,39 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GUI1.ChatPage">
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<!-- Sidebar for chat contacts -->
+		<ScrollView Grid.Column="0" WidthRequest="300">
+			<VerticalStackLayout x:Name="ContactsStack" Spacing="5" Padding="10">
+				<!-- Dynamic buttons for chat contacts will be added here programmatically -->
+			</VerticalStackLayout>
+		</ScrollView>
+
+		<!-- Chat detail view -->
+		<Grid Grid.Column="1" Padding="10">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<!-- Scrollable chat messages -->
+			<ScrollView Grid.Row="0">
+				<StackLayout x:Name="MessagesStack" Spacing="5">
+					<!-- Chat messages will be added here programmatically -->
+				</StackLayout>
+			</ScrollView>
+
+			<!-- Message entry and send button -->
+			<StackLayout Grid.Row="1" Orientation="Horizontal" Padding="0">
+				<Entry x:Name="MessageEntry" HorizontalOptions="FillAndExpand" Placeholder="Type a message..."/>
+				<Button Text="Send" Clicked="OnSendClicked"/>
+			</StackLayout>
+		</Grid>
+	</Grid>
+</ContentPage>

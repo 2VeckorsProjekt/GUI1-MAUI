@@ -1,0 +1,24 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GUI1.MainPage">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <!-- Left spacer -->
+            <ColumnDefinition Width="Auto"/>
+            <!-- Content width limit -->
+            <ColumnDefinition Width="*"/>
+            <!-- Right spacer -->
+        </Grid.ColumnDefinitions>
+
+        <VerticalStackLayout Grid.Column="1" Spacing="5" Padding="10" WidthRequest="300" HorizontalOptions="Center">
+            <Entry x:Name="IpEntry" Placeholder="IP Address"/>
+            <Entry x:Name="PortEntry" Placeholder="Port"/>
+            <Entry x:Name="EndpointEntry" Placeholder="Endpoint"/>
+            <Entry x:Name="UsernameEntry" Placeholder="Username"/>
+            <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True"/>
+            <Button Text="Connect" Clicked="OnConnectClicked"/>
+            <!-- Remove MessagesStack from here if it's intended to be on a different page -->
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

@@ -28,7 +28,17 @@ namespace GUI1
             }
 
             string url = $"wss://{ip}:{port}/{endpoint}";
-            var connection = new HubConnectionBuilder().WithUrl(url).Build();
+            var connection = new HubConnectionBuilder().WithUrl(url, (opts) =>
+            {
+                opts.HttpMessageHandlerFactory = (message) =>
+                {
+                    if (message is HttpClientHandler clientHandler)
+                        // always verify the SSL certificate
+                        clientHandler.ServerCertificateCustomValidationCallback += // Metod för att fulhacka SSL-verifiering
+                            (sender, certificate, chain, sslPolicyErrors) => { return true; };  // TODO: Fixa fungerande på servern
+                    return message;
+                };
+            }).Build();
 
             try
             {

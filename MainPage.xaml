@@ -12,11 +12,11 @@
         </Grid.ColumnDefinitions>
 
         <VerticalStackLayout Grid.Column="1" Spacing="5" Padding="10" WidthRequest="300" HorizontalOptions="Center">
-            <Entry x:Name="IpEntry" Placeholder="IP Address"/>
-            <Entry x:Name="PortEntry" Placeholder="Port"/>
-            <Entry x:Name="EndpointEntry" Placeholder="Endpoint"/>
-            <Entry x:Name="UsernameEntry" Placeholder="Username"/>
-            <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True"/>
+            <Entry x:Name="IpEntry" Placeholder="IP Address" Text="localhost"/>
+            <Entry x:Name="PortEntry" Placeholder="Port" Text="5001"/>
+            <Entry x:Name="EndpointEntry" Placeholder="Endpoint" Text="chathub"/>
+            <Entry x:Name="UsernameEntry" Placeholder="Username" Text="Marcus"/>
+            <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" Text="456"/>
             <Button Text="Connect" Clicked="OnConnectClicked"/>
             <!-- Remove MessagesStack from here if it's intended to be on a different page -->
         </VerticalStackLayout>

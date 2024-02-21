@@ -14,12 +14,18 @@ namespace GUI1
 
         private async void OnConnectClicked(object sender, EventArgs e)
         {
-            string ip = IpEntry.Text;
+            string ip = "localhost";
+            string port = "5001";
+            string endpoint = "chathub";
+            string username = "Marcus";
+            string password = "456";
+
+            /*string ip = IpEntry.Text;
             string port = PortEntry.Text;
             string endpoint = EndpointEntry.Text;
             string username = UsernameEntry.Text;
             string password = PasswordEntry.Text;            
-
+*/
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 // Optionally, indicate to the user that they're being logged in as a guest

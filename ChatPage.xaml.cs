@@ -90,5 +90,10 @@ namespace GUI1
                 await hubConnection.StopAsync();
             }
         }
+
+        private void DiscButtonClicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

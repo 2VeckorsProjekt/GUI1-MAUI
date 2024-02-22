@@ -1,8 +1,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GUI1.ChatPage"
-             Background="SlateGray">
-             
+             BackgroundColor="#20948B">
+    <!-- Main background color -->
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -17,22 +18,25 @@
 
         <!-- Sidebar for chat contacts -->
         <ScrollView Grid.Column="0" Grid.Row="0" WidthRequest="300">
-            <VerticalStackLayout x:Name="ContactsStack" Spacing="5" Padding="10">
-                <Label Text="Contacts"/>
+            <VerticalStackLayout x:Name="ContactsStack" Spacing="5" Padding="10" BackgroundColor="#6AB187">
+                <!-- Contacts sidebar background color -->
+                <Label Text="Contacts" TextColor="White"/>
                 <!-- Dynamic buttons for chat contacts will be added here programmatically -->
             </VerticalStackLayout>
         </ScrollView>
 
         <!-- Chatroom sidebar -->
         <ScrollView Grid.Column="0" Grid.Row="1" Grid.RowSpan="1" WidthRequest="300">
-            <VerticalStackLayout x:Name="ChatroomStack" Spacing="5" Padding="10">
-                <Label Text="Chatrooms"/>
+            <VerticalStackLayout x:Name="ChatroomStack" Spacing="5" Padding="10" BackgroundColor="#6AB187">
+                <!-- Chatroom sidebar background color -->
+                <Label Text="Chatrooms" TextColor="White"/>
                 <!-- Dynamic buttons for chat contacts will be added here programmatically -->
             </VerticalStackLayout>
         </ScrollView>
 
         <!-- Chat detail view -->
-        <Grid Grid.Column="1" Grid.RowSpan="4" Padding="10">
+        <Grid Grid.Column="1" Grid.RowSpan="4" Padding="10" BackgroundColor="#6AB187">
+            <!-- Chat detail view background color -->
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
@@ -47,8 +51,8 @@
 
             <!-- Message entry, send button, and disconnect button -->
             <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="0" VerticalOptions="End" Grid.Column="1">
-                <Entry x:Name="MessageEntry" HorizontalOptions="FillAndExpand" Placeholder="Type a message..."/>
-                <Button Text="Send" Clicked="OnSendClicked"/>
+                <Entry x:Name="MessageEntry" HorizontalOptions="FillAndExpand" Placeholder="Type a message..." BackgroundColor="#20948B" TextColor="White"/>
+                <Button Text="Send" Clicked="OnSendClicked" BackgroundColor="#20948B" TextColor="White"/>
             </StackLayout>
         </Grid>
     </Grid>

@@ -44,15 +44,15 @@
 
             <!-- Scrollable chat messages -->
             <ScrollView Grid.Row="0" VerticalOptions="FillAndExpand">
-                <StackLayout x:Name="MessagesStack" Spacing="5" VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="MessagesStack" Spacing="5" VerticalOptions="FillAndExpand" BackgroundColor="#20948B" Margin="2">
                     <!-- Chat messages will be added here programmatically -->
                 </StackLayout>
             </ScrollView>
 
             <!-- Message entry, send button, and disconnect button -->
             <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="0" VerticalOptions="End" Grid.Column="1">
-                <Entry x:Name="MessageEntry" HorizontalOptions="FillAndExpand" Placeholder="Type a message..." BackgroundColor="#20948B" TextColor="White"/>
-                <Button Text="Send" Clicked="OnSendClicked" BackgroundColor="#20948B" TextColor="White"/>
+                <Entry x:Name="MessageEntry" HorizontalOptions="FillAndExpand" Margin="2" Placeholder="Type a message..." BackgroundColor="#20948B" TextColor="White"/>
+                <Button Text="Send" Clicked="OnSendClicked" Margin="2" BackgroundColor="#20948B" TextColor="White"/>
             </StackLayout>
         </Grid>
     </Grid>

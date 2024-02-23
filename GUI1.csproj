@@ -64,6 +64,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="ChatPage3.xaml.cs">
+	    <DependentUpon>ChatPage3.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ChatPage2.xaml.cs">
+	    <DependentUpon>ChatPage2.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="ChatPage3.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ChatPage2.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ChatPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

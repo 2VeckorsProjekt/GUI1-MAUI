@@ -28,7 +28,7 @@ namespace GUI1
             }
 
             string url = $"wss://{ip}:{port}/{endpoint}";
-            var connection = new HubConnectionBuilder().WithUrl(url, (opts) =>
+            GlobalData.connection = new HubConnectionBuilder().WithUrl(url, (opts) =>
             {
                 opts.HttpMessageHandlerFactory = (message) =>
                 {
@@ -42,14 +42,20 @@ namespace GUI1
 
             try
             {
-                await connection.StartAsync();
+                await GlobalData.connection.StartAsync();
 
                 // Enter the username and password after starting the connection
-                await connection.InvokeAsync("Login", username, password);
+                await GlobalData.connection.InvokeAsync("Login", username, password);
+
+                // Create chat pages
+                GlobalData.Page1 = new ChatPage(GlobalData.connection);
+                GlobalData.Page2 = new ChatPage2(GlobalData.connection);
+                GlobalData.Page3 = new ChatPage3(GlobalData.connection);
 
 
                 // Navigate to chat page
-                await Navigation.PushAsync(new ChatPage(connection));
+                await Navigation.PushAsync(GlobalData.Page1);
+                
             }
             catch (Exception ex)
             {

@@ -5,19 +5,20 @@ using System.Collections.Generic; // Add this to use List
 
 namespace GUI1
 {
-    public partial class ChatPage : ContentPage
+    public partial class ChatPage3 : ContentPage
     {
         HubConnection hubConnection;
 
-        public ChatPage(HubConnection connection)
+        public ChatPage3(HubConnection connection)
         {
             InitializeComponent();
             hubConnection = connection;
 
             // No need to call PopulateContactsSidebar here since it's called in OnAppearing
             // PopulateContactsSidebar();
+            
 
-            hubConnection.On<string>("ReceiveMessage", (message) =>
+            hubConnection.On<string>("ReceiveMessage3", (message) =>
             {
                 Dispatcher.Dispatch(() =>
                 {
@@ -25,15 +26,15 @@ namespace GUI1
                 });
             });
 
-
+            //PopulateContactsSidebar();
+            //PopulateChatRoomList();
         }
 
         // This method will be called when the page appears
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            PopulateContactsSidebar();
+            PopulateContactsSidebar(); // Ensure the sidebar is populated when the page appears
             PopulateChatRoomList();
             //InitializeHubConnection();
         }
@@ -60,13 +61,17 @@ namespace GUI1
 
         private void PopulateChatRoomList()
         {
+
             ChatroomStack.Children.Clear();
 
             var chatRoomButton = new Button { Text = "Room 1" };
             chatRoomButton.Clicked += async (sender, e) =>
             {
                 try { await Navigation.PushAsync(GlobalData.Page1); }
-                catch { }
+                catch {
+                    await Navigation.PopAsync();
+                    await Navigation.PushAsync(GlobalData.Page1); }
+                
             };
             ChatroomStack.Children.Add(chatRoomButton);
 
@@ -74,7 +79,11 @@ namespace GUI1
             chatRoomButton.Clicked += async (sender, e) =>
             {
                 try { await Navigation.PushAsync(GlobalData.Page2); }
-                catch { }
+                catch {
+                    await Navigation.PopAsync();
+                    await Navigation.PushAsync(GlobalData.Page2);
+                }
+
             };
             ChatroomStack.Children.Add(chatRoomButton);
 
@@ -82,7 +91,10 @@ namespace GUI1
             chatRoomButton.Clicked += async (sender, e) =>
             {
                 try { await Navigation.PushAsync(GlobalData.Page3); }
-                catch { }
+                catch {
+                    await Navigation.PopAsync();
+                    await Navigation.PushAsync(GlobalData.Page3);
+                }
             };
             ChatroomStack.Children.Add(chatRoomButton);
         }
@@ -92,7 +104,7 @@ namespace GUI1
             var message = MessageEntry.Text;
             if (!string.IsNullOrEmpty(message) && hubConnection.State == HubConnectionState.Connected)
             {
-                await hubConnection.SendAsync("SendMessage", message);
+                await hubConnection.SendAsync("SendMessage3", message);
                 Dispatcher.Dispatch(() =>
                 {
                     MessagesStack.Children.Add(new Label { Text = $"Me: {message}" });
@@ -128,6 +140,7 @@ namespace GUI1
             }
         }
         */
+
         private void DiscButtonClicked(object sender, EventArgs e)
         {
 

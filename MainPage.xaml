@@ -8,7 +8,7 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <VerticalStackLayout Grid.Column="1" Spacing="5" Padding="10" WidthRequest="300" HorizontalOptions="Center" BackgroundColor="#6AB187">
+        <VerticalStackLayout Grid.Column="1" Spacing="20" Padding="0" WidthRequest="300" HorizontalOptions="Center" BackgroundColor="#6AB187">
             <Entry x:Name="IpEntry" Placeholder="IP Address" Text="localhost" PlaceholderColor="#20948B" TextColor="White"/>
             <Entry x:Name="PortEntry" Placeholder="Port" Text="5001" PlaceholderColor="#20948B" TextColor="White"/>
             <Entry x:Name="EndpointEntry" Placeholder="Endpoint" Text="chathub" PlaceholderColor="#20948B" TextColor="White"/>

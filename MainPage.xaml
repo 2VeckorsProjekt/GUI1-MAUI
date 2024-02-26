@@ -23,7 +23,7 @@
             <Entry x:Name="EndpointEntry" Placeholder="Endpoint" Text="chathub" PlaceholderColor="#20948B" TextColor="White"/>
             <Entry x:Name="UsernameEntry" Placeholder="Username" Text="Marcus" PlaceholderColor="#20948B" TextColor="White"/>
             <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" Text="456" PlaceholderColor="#20948B" TextColor="White"/>
-            <Frame CornerRadius="5" Padding="0" IsClippedToBounds="True" BackgroundColor="Transparent">
+            <Frame CornerRadius="5" Padding="0" IsClippedToBounds="True" BackgroundColor="Transparent" BorderColor="Transparent">
                 <Button Text="Connect" Clicked="OnConnectClicked" BackgroundColor="#20948B" TextColor="White"/>
             </Frame>
         </VerticalStackLayout>

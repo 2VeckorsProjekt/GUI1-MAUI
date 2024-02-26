@@ -33,40 +33,26 @@ namespace GUI1
         private void PopulateChatRoomList()
         {
 
-            ChatroomStack.Children.Clear();
-
             var chatRoomButton = new Button { Text = "Room 1" };
             chatRoomButton.Clicked += async (sender, e) =>
             {
-                try { await Navigation.PushAsync(GlobalData.Page1); }
-                catch {
-                    await Navigation.PopAsync();
-                    await Navigation.PushAsync(GlobalData.Page1); }
-                
+                Application.Current.MainPage = GlobalData.Page1;
             };
             ChatroomStack.Children.Add(chatRoomButton);
 
             chatRoomButton = new Button { Text = "Room 2" };
             chatRoomButton.Clicked += async (sender, e) =>
             {
-                try { await Navigation.PushAsync(GlobalData.Page2); }
-                catch {
-                    await Navigation.PopAsync();
-                    await Navigation.PushAsync(GlobalData.Page2);
-                }
-
+                Application.Current.MainPage = GlobalData.Page2;
             };
             ChatroomStack.Children.Add(chatRoomButton);
 
             chatRoomButton = new Button { Text = "Room 3" };
             chatRoomButton.Clicked += async (sender, e) =>
             {
-                try { await Navigation.PushAsync(GlobalData.Page3); }
-                catch {
-                    await Navigation.PopAsync();
-                    await Navigation.PushAsync(GlobalData.Page3);
-                }
+                Application.Current.MainPage = GlobalData.Page3;
             };
+            chatRoomButton.TextColor = Color.FromRgb(255, 51, 51);
             ChatroomStack.Children.Add(chatRoomButton);
         }
 

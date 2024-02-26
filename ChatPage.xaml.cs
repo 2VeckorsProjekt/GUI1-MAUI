@@ -21,6 +21,7 @@ namespace GUI1
                     MessagesStack.Children.Add(new Label { Text = message });
                 });
             });
+
             PopulateChatRoomList();
         }
 
@@ -28,36 +29,31 @@ namespace GUI1
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            PopulateChatRoomList();
         }
 
 
         private void PopulateChatRoomList()
         {
-            ChatroomStack.Children.Clear();
 
             var chatRoomButton = new Button { Text = "Room 1" };
             chatRoomButton.Clicked += async (sender, e) =>
             {
-                try { await Navigation.PushAsync(GlobalData.Page1); }
-                catch { }
+                Application.Current.MainPage = GlobalData.Page1;
             };
+            chatRoomButton.TextColor = Color.FromRgb(255, 51, 51);
             ChatroomStack.Children.Add(chatRoomButton);
 
             chatRoomButton = new Button { Text = "Room 2" };
             chatRoomButton.Clicked += async (sender, e) =>
             {
-                try { await Navigation.PushAsync(GlobalData.Page2); }
-                catch { }
+                Application.Current.MainPage = GlobalData.Page2;
             };
             ChatroomStack.Children.Add(chatRoomButton);
 
             chatRoomButton = new Button { Text = "Room 3" };
             chatRoomButton.Clicked += async (sender, e) =>
             {
-                try { await Navigation.PushAsync(GlobalData.Page3); }
-                catch { }
+                Application.Current.MainPage = GlobalData.Page3;
             };
             ChatroomStack.Children.Add(chatRoomButton);
         }

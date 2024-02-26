@@ -4,56 +4,40 @@
              BackgroundColor="#20948B">
     <!-- Main background color -->
 
-    <Grid>
+    <!-- Chat detail view -->
+    <Grid Padding="15" BackgroundColor="#6AB187">
+        <!-- Chat detail view background color -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <!-- Sidebar for chat contacts -->
-        <ScrollView Grid.Column="0" Grid.Row="0" WidthRequest="300">
-            <VerticalStackLayout x:Name="ContactsStack" Spacing="5" Padding="10" BackgroundColor="#20948B">
-                <!-- Contacts sidebar background color -->
-                <Label Text="Contacts" TextColor="White"/>
-                <!-- Dynamic buttons for chat contacts will be added here programmatically -->
-            </VerticalStackLayout>
+        <!-- Chatroom topbar -->
+        <ScrollView Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand">
+            <Frame CornerRadius="5" Padding="0" Margin="2" BackgroundColor="#20948B">
+                <HorizontalStackLayout x:Name="ChatroomStack" Spacing="5" Padding="5"  BackgroundColor="#20948B" HorizontalOptions="FillAndExpand" >
+                    <!-- Chatroom sidebar background color -->
+
+                    <!-- Dynamic buttons for chat contacts will be added here programmatically -->
+                </HorizontalStackLayout>
+            </Frame>
+
         </ScrollView>
 
-        <!-- Chatroom sidebar -->
-        <ScrollView Grid.Column="0" Grid.Row="1" Grid.RowSpan="1" WidthRequest="300">
-            <VerticalStackLayout x:Name="ChatroomStack" Spacing="5" Padding="10" BackgroundColor="#6AB187">
-                <!-- Chatroom sidebar background color -->
-                <Label Text="Chatrooms" TextColor="White"/>
-                <!-- Dynamic buttons for chat contacts will be added here programmatically -->
-            </VerticalStackLayout>
-        </ScrollView>
-
-        <!-- Chat detail view -->
-        <Grid Grid.Column="1" Grid.RowSpan="4" Padding="10" BackgroundColor="#6AB187">
-            <!-- Chat detail view background color -->
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-
-            <!-- Scrollable chat messages -->
-            <ScrollView Grid.Row="0" VerticalOptions="FillAndExpand">
-                <StackLayout x:Name="MessagesStack" Spacing="5" VerticalOptions="FillAndExpand" BackgroundColor="#20948B" Margin="2">
+        <!-- Scrollable chat messages -->
+        <ScrollView Grid.Row="1" VerticalOptions="FillAndExpand">
+            <Frame CornerRadius="5" Padding="0" Margin="2" BackgroundColor="#20948B">
+                <StackLayout x:Name="MessagesStack" Margin="5" Spacing="5" VerticalOptions="FillAndExpand" BackgroundColor="#20948B"  >
                     <!-- Chat messages will be added here programmatically -->
                 </StackLayout>
-            </ScrollView>
+            </Frame>
+        </ScrollView>
 
-            <!-- Message entry, send button, and disconnect button -->
-            <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="0" VerticalOptions="End" Grid.Column="1">
-                <Entry x:Name="MessageEntry" HorizontalOptions="FillAndExpand" Margin="2" Placeholder="Type a message..." BackgroundColor="#20948B" TextColor="White"/>
-                <Button Text="Send" Clicked="OnSendClicked" Margin="2" BackgroundColor="#20948B" TextColor="White"/>
-            </StackLayout>
-        </Grid>
+        <!-- Message entry, send button, and disconnect button -->
+        <StackLayout Grid.Row="2" Orientation="Horizontal" Padding="0" VerticalOptions="End" Grid.Column="1">
+            <Entry x:Name="MessageEntry" HorizontalOptions="FillAndExpand" Margin="2" Placeholder="Type a message..." BackgroundColor="#20948B" TextColor="White"/>
+            <Button Text="Send" Clicked="OnSendClicked" Margin="2" BackgroundColor="#20948B" TextColor="White"/>
+        </StackLayout>
     </Grid>
 </ContentPage>

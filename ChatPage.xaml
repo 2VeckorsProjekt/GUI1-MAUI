@@ -13,20 +13,25 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-        <!-- Chatroom sidebar -->
+        <!-- Chatroom topbar -->
         <ScrollView Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand">
-            <HorizontalStackLayout x:Name="ChatroomStack" Spacing="5" Padding="10" BackgroundColor="#20948B" HorizontalOptions="FillAndExpand" Margin="2">
-                <!-- Chatroom sidebar background color -->
-                <Label Text="Chatrooms" TextColor="White"/>
-                <!-- Dynamic buttons for chat contacts will be added here programmatically -->
-            </HorizontalStackLayout>
+            <Frame CornerRadius="5" Padding="0" Margin="2" BackgroundColor="#20948B">
+                <HorizontalStackLayout x:Name="ChatroomStack" Spacing="5" Padding="5"  BackgroundColor="#20948B" HorizontalOptions="FillAndExpand" >
+                    <!-- Chatroom sidebar background color -->
+
+                    <!-- Dynamic buttons for chat contacts will be added here programmatically -->
+                </HorizontalStackLayout>
+            </Frame>
+            
         </ScrollView>
 
         <!-- Scrollable chat messages -->
         <ScrollView Grid.Row="1" VerticalOptions="FillAndExpand">
-            <StackLayout x:Name="MessagesStack" Spacing="5" VerticalOptions="FillAndExpand" BackgroundColor="#20948B" Margin="2">
-                <!-- Chat messages will be added here programmatically -->
-            </StackLayout>
+            <Frame CornerRadius="5" Padding="0" Margin="2" BackgroundColor="#20948B">
+                <StackLayout x:Name="MessagesStack" Margin="5" Spacing="5" VerticalOptions="FillAndExpand" BackgroundColor="#20948B"  >
+                    <!-- Chat messages will be added here programmatically -->
+                </StackLayout>
+            </Frame>
         </ScrollView>
 
         <!-- Message entry, send button, and disconnect button -->

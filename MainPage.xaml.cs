@@ -27,7 +27,7 @@ namespace GUI1
                 username = "Guest";
             }
 
-            string url = $"wss://{ip}:{port}/{endpoint}";
+            string url = $"https://{ip}:{port}/{endpoint}";
             GlobalData.connection = new HubConnectionBuilder().WithUrl(url, (opts) =>
             {
                 opts.HttpMessageHandlerFactory = (message) =>
@@ -54,8 +54,8 @@ namespace GUI1
 
 
                 // Navigate to chat page
-                await Navigation.PushAsync(GlobalData.Page1);
-                
+                Application.Current.MainPage = GlobalData.Page1;
+
             }
             catch (Exception ex)
             {

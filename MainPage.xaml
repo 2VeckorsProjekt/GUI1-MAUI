@@ -2,21 +2,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GUI1.MainPage"
              BackgroundColor="#20948B">
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <VerticalStackLayout Grid.Column="1" Spacing="20" Padding="0" WidthRequest="300" HorizontalOptions="Center" BackgroundColor="#6AB187">
+
+        <BoxView Color="#6AB187" Grid.Row="1" Grid.Column="1" CornerRadius="15" WidthRequest="350"/>
+
+        <VerticalStackLayout Grid.Row="1" Grid.Column="1" Spacing="20" Padding="0,20" WidthRequest="320" HorizontalOptions="Center" BackgroundColor="#6AB187">
             <Entry x:Name="IpEntry" Placeholder="IP Address" Text="localhost" PlaceholderColor="#20948B" TextColor="White"/>
             <Entry x:Name="PortEntry" Placeholder="Port" Text="5001" PlaceholderColor="#20948B" TextColor="White"/>
             <Entry x:Name="EndpointEntry" Placeholder="Endpoint" Text="chathub" PlaceholderColor="#20948B" TextColor="White"/>
             <Entry x:Name="UsernameEntry" Placeholder="Username" Text="Marcus" PlaceholderColor="#20948B" TextColor="White"/>
             <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" Text="456" PlaceholderColor="#20948B" TextColor="White"/>
-            <Frame CornerRadius="5" Padding="0" IsClippedToBounds="True" BackgroundColor="Transparent" BorderColor="Black">
+            <Frame CornerRadius="5" Padding="0" IsClippedToBounds="True" BackgroundColor="Transparent">
                 <Button Text="Connect" Clicked="OnConnectClicked" BackgroundColor="#20948B" TextColor="White"/>
             </Frame>
         </VerticalStackLayout>
     </Grid>
+
 </ContentPage>

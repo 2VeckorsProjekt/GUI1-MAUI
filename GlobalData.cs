@@ -14,5 +14,6 @@ public static class GlobalData
     public static ChatPage Page1;
     public static ChatPage2 Page2;
     public static ChatPage3 Page3;
+    public static ClientsPage ConnectedClients;
 
 }

@@ -51,7 +51,9 @@ namespace GUI1
                 GlobalData.Page1 = new ChatPage(GlobalData.connection);
                 GlobalData.Page2 = new ChatPage2(GlobalData.connection);
                 GlobalData.Page3 = new ChatPage3(GlobalData.connection);
+                GlobalData.ConnectedClients = new ClientsPage(GlobalData.connection);
 
+                GlobalData.connection.InvokeAsync("SendLoggedInList");
 
                 // Navigate to chat page
                 Application.Current.MainPage = GlobalData.Page1;

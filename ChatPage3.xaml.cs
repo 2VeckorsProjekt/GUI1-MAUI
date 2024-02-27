@@ -61,6 +61,13 @@ namespace GUI1
                 Application.Current.MainPage = GlobalData.ConnectedClients;
             };
             ChatroomStack.Children.Add(chatRoomButton);
+
+            chatRoomButton = new Button { Text = "PMs" };
+            chatRoomButton.Clicked += async (sender, e) =>
+            {
+                Application.Current.MainPage = GlobalData.privates;
+            };
+            ChatroomStack.Children.Add(chatRoomButton);
         }
 
         private async void OnSendClicked(object sender, EventArgs e)

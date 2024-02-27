@@ -1,6 +1,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GUI1.ChatPage2"
+             x:Class="GUI1.PMPage"
              BackgroundColor="#20948B">
     <!-- Main background color -->
 
@@ -13,17 +13,32 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <VerticalStackLayout>
+            <ScrollView Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand">
+                <Frame CornerRadius="5" Padding="0" Margin="2" BackgroundColor="#20948B">
+                    <HorizontalStackLayout x:Name="ChatroomStack" Spacing="5" Padding="5"  BackgroundColor="#20948B" HorizontalOptions="FillAndExpand" >
+                        <!-- Chatroom sidebar background color -->
+
+                        <!-- Dynamic buttons for chat contacts will be added here programmatically -->
+                    </HorizontalStackLayout>
+                </Frame>
+
+            </ScrollView>
+
+            <ScrollView Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand">
+                <Frame CornerRadius="5" Padding="0" Margin="2" BackgroundColor="#20948B">
+                    <HorizontalStackLayout x:Name="ConvoStack" Spacing="5" Padding="5"  BackgroundColor="#20948B" HorizontalOptions="FillAndExpand" >
+                        <!-- Chatroom sidebar background color -->
+
+                        <!-- Dynamic buttons for chat contacts will be added here programmatically -->
+                    </HorizontalStackLayout>
+                </Frame>
+
+            </ScrollView>
+        </VerticalStackLayout>
+        
         <!-- Chatroom topbar -->
-        <ScrollView Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand">
-            <Frame CornerRadius="5" Padding="0" Margin="2" BackgroundColor="#20948B">
-                <HorizontalStackLayout x:Name="ChatroomStack" Spacing="5" Padding="5"  BackgroundColor="#20948B" HorizontalOptions="FillAndExpand" >
-                    <!-- Chatroom sidebar background color -->
-
-                    <!-- Dynamic buttons for chat contacts will be added here programmatically -->
-                </HorizontalStackLayout>
-            </Frame>
-
-        </ScrollView>
+        
 
         <!-- Scrollable chat messages -->
         <ScrollView Grid.Row="1" VerticalOptions="FillAndExpand">

@@ -99,5 +99,12 @@ public partial class ClientsPage : ContentPage
         };
         chatRoomButton.TextColor = Color.FromRgb(255, 51, 51);
         ChatroomStack.Children.Add(chatRoomButton);
+
+        chatRoomButton = new Button { Text = "PMs" };
+        chatRoomButton.Clicked += async (sender, e) =>
+        {
+            Application.Current.MainPage = GlobalData.privates;
+        };
+        ChatroomStack.Children.Add(chatRoomButton);
     }
 }

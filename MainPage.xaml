@@ -15,9 +15,11 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <BoxView Color="#6AB187" Grid.Row="1" Grid.Column="1" CornerRadius="15" WidthRequest="350"/>
+        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#6AB187">
+            <BoxView Color="#6AB187" Grid.Row="1" Grid.Column="1" CornerRadius="15" WidthRequest="350"/>
+        </Frame>
 
-        <VerticalStackLayout Grid.Row="1" Grid.Column="1" Spacing="20" Padding="0,20" WidthRequest="320" HorizontalOptions="Center" BackgroundColor="#6AB187">
+        <VerticalStackLayout  Grid.Row="1" Grid.Column="1" Spacing="20" Padding="0,20" WidthRequest="320" HorizontalOptions="Center" >
             <Entry x:Name="IpEntry" Placeholder="IP Address" PlaceholderColor="#20948B" TextColor="White"/>
             <Entry x:Name="PortEntry" Placeholder="Port" PlaceholderColor="#20948B" TextColor="White"/>
             <Entry x:Name="EndpointEntry" Placeholder="Endpoint" PlaceholderColor="#20948B" TextColor="White"/>
@@ -26,6 +28,7 @@
             <Frame CornerRadius="5" Padding="0" IsClippedToBounds="True" BackgroundColor="Transparent">
                 <Button Text="Connect" Clicked="OnConnectClicked" BackgroundColor="#20948B" TextColor="White"/>
             </Frame>
+            
         </VerticalStackLayout>
     </Grid>
 

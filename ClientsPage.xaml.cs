@@ -21,7 +21,11 @@ public partial class ClientsPage : ContentPage
 
             foreach (var item in clients)
             {
-                clientList.Add(item);
+                if (item != string.Empty)
+                {
+                    clientList.Add(item);
+                }
+                
             }
 
             UpdateClientList();
@@ -56,6 +60,7 @@ public partial class ClientsPage : ContentPage
     {
         MainThread.BeginInvokeOnMainThread(() => {
             MessagesStack.Clear();
+            MessagesStack.Children.Add(new Label { Text = "List of connected clients:" });
             foreach (var item in clientList)
             {
                 MessagesStack.Children.Add(new Label { Text = item });
@@ -66,7 +71,6 @@ public partial class ClientsPage : ContentPage
 
     private void PopulateChatRoomList()
     {
-
         var chatRoomButton = new Button { Text = "Room 1" };
         chatRoomButton.Clicked += async (sender, e) =>
         {

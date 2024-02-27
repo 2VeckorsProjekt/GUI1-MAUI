@@ -39,7 +39,10 @@
             <Frame CornerRadius="5" Padding="0" BackgroundColor="#20948B" HorizontalOptions="FillAndExpand">
                 <Entry x:Name="MessageEntry" HorizontalOptions="FillAndExpand" Margin="2" Placeholder="Type a message..." BackgroundColor="#20948B" TextColor="White"/>
             </Frame>
-            <Button Text="Send" Clicked="OnSendClicked" Margin="2" BackgroundColor="#20948B" TextColor="White"/>
+            <Frame CornerRadius="5" Padding="0" BackgroundColor="#20948B">
+                <Button BorderColor="White" Text="Send" Clicked="OnSendClicked" Margin="2" BackgroundColor="#20948B" TextColor="White"/>
+            </Frame>
+            
         </StackLayout>
     </Grid>
 

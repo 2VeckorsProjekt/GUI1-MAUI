@@ -43,7 +43,7 @@ namespace GUI1
                 string action = client[0];
                 string user = client[1];
                 
-                if (action == "Connected")
+                if (action == "Connected" && !messages.ContainsKey(user))
                 {
                     MainThread.BeginInvokeOnMainThread(() => {
                         messages[user] = new List<string>();
@@ -82,10 +82,14 @@ namespace GUI1
             MainThread.BeginInvokeOnMainThread(() => {
                 MessagesStack.Clear();
                 MessagesStack.Children.Add(new Label { Text = $"Chat history with {current}" });
-                foreach (var item in messages[current])
+                if (current != string.Empty)
                 {
-                    MessagesStack.Children.Add(new Label { Text = item });
+                    foreach (var item in messages[current])
+                    {
+                        MessagesStack.Children.Add(new Label { Text = item });
+                    }
                 }
+                
             });
         }
 

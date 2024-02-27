@@ -12,21 +12,28 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
         <!-- Chatroom topbar -->
         <ScrollView Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand">
             <Frame CornerRadius="5" Padding="0" Margin="2" BackgroundColor="#20948B">
                 <HorizontalStackLayout x:Name="ChatroomStack" Spacing="5" Padding="5"  BackgroundColor="#20948B" HorizontalOptions="FillAndExpand" >
                     <!-- Chatroom sidebar background color -->
-
                     <!-- Dynamic buttons for chat contacts will be added here programmatically -->
                 </HorizontalStackLayout>
             </Frame>
-            
         </ScrollView>
-
+        
+        <HorizontalStackLayout Grid.Row="0" Grid.Column="1">
+                <Button x:Name="Disconnect" Text="Disconnect" BackgroundColor="Red" TextColor="Black" HorizontalOptions="End"
+                        Clicked="Disconnect_Clicked" Margin="3"/>
+            </HorizontalStackLayout>
+      
         <!-- Scrollable chat messages -->
-        <ScrollView Grid.Row="1" VerticalOptions="FillAndExpand">
+        <ScrollView Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" VerticalOptions="FillAndExpand">
             <Frame CornerRadius="5" Padding="0" Margin="2" BackgroundColor="#20948B">
                 <StackLayout x:Name="MessagesStack" Margin="5" Spacing="5" VerticalOptions="FillAndExpand" BackgroundColor="#20948B"  >
                     <!-- Chat messages will be added here programmatically -->
@@ -35,7 +42,7 @@
         </ScrollView>
 
         <!-- Message entry, send button, and disconnect button -->
-        <StackLayout Grid.Row="2" Orientation="Horizontal" Padding="2" VerticalOptions="End" Grid.Column="1">
+        <StackLayout Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" Padding="2" VerticalOptions="End" Grid.Column="0">
             <Frame CornerRadius="5" Padding="0" BackgroundColor="#20948B" HorizontalOptions="FillAndExpand">
                 <Entry x:Name="MessageEntry" HorizontalOptions="FillAndExpand" Margin="2" Placeholder="Type a message..." BackgroundColor="#20948B" TextColor="White"/>
             </Frame>

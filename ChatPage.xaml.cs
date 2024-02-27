@@ -79,9 +79,20 @@ namespace GUI1
             }
         }
 
-        private void DiscButtonClicked(object sender, EventArgs e)
+        private async void Disconnect_Clicked(object sender, EventArgs e)
         {
-
+            try
+            {
+                if(hubConnection.State == HubConnectionState.Connected)
+                {
+                    await hubConnection.StopAsync();
+                    Application.Current.MainPage = new MainPage();
+                }
+            }
+            catch (Exception ex)
+            {
+                await Console.Out.WriteLineAsync($"Error disconnecting: {ex.Message}");
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GUI1.ChatPage"
+             x:Class="GUI1.ClientsPage"
              BackgroundColor="#20948B">
     <!-- Main background color -->
 
@@ -35,11 +35,9 @@
         </ScrollView>
 
         <!-- Message entry, send button, and disconnect button -->
-        <StackLayout Grid.Row="2" Orientation="Horizontal" Padding="2" VerticalOptions="End" Grid.Column="1">
-            <Frame CornerRadius="5" Padding="0" BackgroundColor="#20948B" HorizontalOptions="FillAndExpand">
-                <Entry x:Name="MessageEntry" HorizontalOptions="FillAndExpand" Margin="2" Placeholder="Type a message..." BackgroundColor="#20948B" TextColor="White"/>
-            </Frame>
-            <Button Text="Send" Clicked="OnSendClicked" Margin="2" BackgroundColor="#20948B" TextColor="White"/>
+        <StackLayout Grid.Row="2" Orientation="Horizontal" Padding="0" VerticalOptions="End" Grid.Column="1">
+            <Entry x:Name="MessageEntry" HorizontalOptions="FillAndExpand" Margin="2" Placeholder="Type a message..." BackgroundColor="#20948B" TextColor="White"/>
+            <Button Text="Send" Margin="2" BackgroundColor="#20948B" TextColor="White"/>
         </StackLayout>
     </Grid>
 

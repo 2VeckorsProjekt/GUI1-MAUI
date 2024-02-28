@@ -1,29 +1,40 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GUI1.ChatPage3"
+             BackgroundColor="#20948B">
+    <!-- Main background color -->
 
+    <!-- Chat detail view -->
     <Grid Padding="15" BackgroundColor="#6AB187">
+        <!-- Chat detail view background color -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Chatroom toppfält -->
+        <!-- Chatroom topbar -->
         <ScrollView Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand">
             <Frame CornerRadius="5" Padding="0" Margin="2" BackgroundColor="#20948B">
-            <HorizontalStackLayout x:Name="ChatroomStack" Spacing="5" Padding="5"  BackgroundColor="#20948B" HorizontalOptions="FillAndExpand" ></HorizontalStackLayout>
+                <HorizontalStackLayout x:Name="ChatroomStack" Spacing="5" Padding="5"  BackgroundColor="#20948B" HorizontalOptions="FillAndExpand" >
+                    <!-- Chatroom sidebar background color -->
+
+                    <!-- Dynamic buttons for chat contacts will be added here programmatically -->
+                </HorizontalStackLayout>
             </Frame>
+
         </ScrollView>
 
-        <!-- Rullbara chattmeddelanden -->
+        <!-- Scrollable chat messages -->
         <ScrollView Grid.Row="1" VerticalOptions="FillAndExpand">
             <Frame CornerRadius="5" Padding="0" Margin="2" BackgroundColor="#20948B">
-            <StackLayout x:Name="MessagesStack" Margin="5" Spacing="5" VerticalOptions="FillAndExpand" BackgroundColor="#20948B"  ></StackLayout>
+                <StackLayout x:Name="MessagesStack" Margin="5" Spacing="5" VerticalOptions="FillAndExpand" BackgroundColor="#20948B"  >
+                    <!-- Chat messages will be added here programmatically -->
+                </StackLayout>
             </Frame>
         </ScrollView>
 
-        <!-- Meddelandeinmatning, sändknapp och frånkopplingsknapp -->
+        <!-- Message entry, send button, and disconnect button -->
         <StackLayout Grid.Row="2" Orientation="Horizontal" Padding="2" VerticalOptions="End" Grid.Column="1">
             <Frame CornerRadius="5" Padding="0" BackgroundColor="#20948B" HorizontalOptions="FillAndExpand">
                 <Entry x:Name="MessageEntry" HorizontalOptions="FillAndExpand" Margin="2" Placeholder="Type a message..." BackgroundColor="#20948B" TextColor="White"/>
@@ -31,6 +42,7 @@
             <Frame CornerRadius="5" Padding="0" BackgroundColor="#20948B">
                 <Button BorderColor="White" Text="Send" Clicked="OnSendClicked" Margin="2" BackgroundColor="#20948B" TextColor="White"/>
             </Frame>
+
         </StackLayout>
     </Grid>
 </ContentPage>

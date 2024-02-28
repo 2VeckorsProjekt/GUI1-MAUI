@@ -28,7 +28,7 @@
             <Frame CornerRadius="5" Padding="0" IsClippedToBounds="True" BackgroundColor="Transparent">
                 <Button Text="Connect" Clicked="OnConnectClicked" BackgroundColor="#20948B" TextColor="White"/>
             </Frame>
-
+            
         </VerticalStackLayout>
     </Grid>
 

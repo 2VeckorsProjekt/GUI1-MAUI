@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Maui.Controls;
 using System;
-using System.Collections.Generic;
+using System.Collections.Generic; // Add this to use List
 
 namespace GUI1
 {

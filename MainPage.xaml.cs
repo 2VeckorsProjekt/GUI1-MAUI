@@ -9,7 +9,6 @@ namespace GUI1
     {
         public MainPage()
         {
-            // Initierar gränssnittskomponenter
             InitializeComponent();
         }
 
@@ -23,17 +22,18 @@ namespace GUI1
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
+                // Optionally, indicate to the user that they're being logged in as a guest
+                // or leave blank and let the server handle it as shown in the Hub modification.
                 username = "Guest";
             }
 
             string url = $"https://{ip}:{port}/{endpoint}";
-
-            // Konfigurera anslutningen med SignalR
             GlobalData.connection = new HubConnectionBuilder().WithUrl(url, (opts) =>
             {
                 opts.HttpMessageHandlerFactory = (message) =>
                 {
                     if (message is HttpClientHandler clientHandler)
+                        // always verify the SSL certificate
                         clientHandler.ServerCertificateCustomValidationCallback += // Metod för att fulhacka SSL-verifiering
                             (sender, certificate, chain, sslPolicyErrors) => { return true; };  // TODO: Fixa fungerande på servern
                     return message;
@@ -44,8 +44,10 @@ namespace GUI1
             {
                 await GlobalData.connection.StartAsync();
 
+                // Enter the username and password after starting the connection
                 await GlobalData.connection.InvokeAsync("Login", username, password);
 
+                // Create chat pages
                 GlobalData.Page1 = new ChatPage(GlobalData.connection);
                 GlobalData.Page2 = new ChatPage2(GlobalData.connection);
                 GlobalData.Page3 = new ChatPage3(GlobalData.connection);
@@ -54,6 +56,7 @@ namespace GUI1
 
                 GlobalData.connection.InvokeAsync("SendLoggedInList");
 
+                // Navigate to chat page
                 Application.Current.MainPage = GlobalData.Page1;
 
             }

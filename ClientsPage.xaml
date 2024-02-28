@@ -2,39 +2,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GUI1.ClientsPage"
              BackgroundColor="#20948B">
-    <!-- Main background color -->
 
-    <!-- Chat detail view -->
     <Grid Padding="15" BackgroundColor="#6AB187">
-        <!-- Chat detail view background color -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
-        <!-- Chatroom topbar -->
+
+        <!-- Chatroom toppfält -->
         <ScrollView Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand">
             <Frame CornerRadius="5" Padding="0" Margin="2" BackgroundColor="#20948B">
-                <HorizontalStackLayout x:Name="ChatroomStack" Spacing="5" Padding="5"  BackgroundColor="#20948B" HorizontalOptions="FillAndExpand" >
-                    <!-- Chatroom sidebar background color -->
-
-                    <!-- Dynamic buttons for chat contacts will be added here programmatically -->
-                </HorizontalStackLayout>
-            </Frame>
-            
+                <HorizontalStackLayout x:Name="ChatroomStack" Spacing="5" Padding="5"  BackgroundColor="#20948B" HorizontalOptions="FillAndExpand" ></HorizontalStackLayout>
+            </Frame>            
         </ScrollView>
 
-        <!-- Scrollable chat messages -->
+        <!-- Rullbara chattmeddelanden -->
         <ScrollView Grid.Row="1" VerticalOptions="FillAndExpand">
             <Frame CornerRadius="5" Padding="0" Margin="2" BackgroundColor="#20948B">
-                <StackLayout x:Name="MessagesStack" Margin="5" Spacing="5" VerticalOptions="FillAndExpand" BackgroundColor="#20948B" >
-                    <!-- Chat messages will be added here programmatically -->
-                </StackLayout>
+                <StackLayout x:Name="MessagesStack" Margin="5" Spacing="5" VerticalOptions="FillAndExpand" BackgroundColor="#20948B" ></StackLayout>
             </Frame>
         </ScrollView>
-
-        <!-- Message entry, send button, and disconnect button -->        
     </Grid>
-
 </ContentPage>
